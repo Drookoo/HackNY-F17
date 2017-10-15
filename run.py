@@ -1,5 +1,6 @@
 from flask import Flask, request
 from twilio.rest import Client
+
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio import twiml
 import requests
@@ -13,7 +14,16 @@ client = Client('AC2f71f255524180a45b9acf3a55766db6', '69aa8e008a80ce5248f72429b
 def sms():
     message_body = request.form['Body']
     resp = MessagingResponse()
-    resp.message('Hello, your zip is {}'.format(message_body))
+
+    zipcode = []
+    dreamset = {}
+    url = 'https://data.cityofnewyork.us/resource/byk8-bdfw.json'
+    dataset = requests.get(url).json()
+    for e in range(47):
+        zipcode.append(dataset[e]['postcode'])
+
+
+    resp.message('There are {} fire stations in your zip'.format(zipcode.count(message_body)))
     return str(resp)
 
 if __name__ == "__main__":
