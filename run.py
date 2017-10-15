@@ -14,24 +14,44 @@ def sms():
     resp = MessagingResponse()
 
     zipcode = []
+    precinct_zip = []
     url = 'http://webpage.pace.edu/ar88230p/meow.json'
+    url2 = 'https://data.cityofnewyork.us/resource/qiz3-axqb.json'
+    precinct_data = requests.get(url2).json()
     #https://data.cityofnewyork.us/Public-Safety/FDNY-Firehouse-Listing/hc8x-tcnd
+    #https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95
     dataset = requests.get(url).json()
 
     for e in range(213):
         zipcode.append(dataset[e]['postcode'])
 
+    for e in range(1000):
+        if 'zip_code' in precinct_data[e]:
+            precinct_zip.append(precinct_data[e]['zip_code'])
+
     if message_body not in zipcode:
         resp.message("your zipcode is not within the realm "
                      "of new york city")
     else:
-        plusone = int(message_body) + 1
-        minusone = int(message_body) - 1
-        sum = zipcode.count(plusone) + zipcode.count(minusone)
+        if message_body == '10002':
+            sum = int(zipcode.count(str(10009))) + int(zipcode.count(str(10012)) + int(
+                zipcode.count(str(10013))) + int(zipcode.count(str(10003))) + int(
+                zipcode.count(str(10007))) + int(zipcode.count(str(10038))))
+        elif message_body == '10003':
+            sum = int(zipcode.count(str(10002))) + int(zipcode.count(str(10009)) + int(
+                zipcode.count(str(10010))) + int(zipcode.count(str(100011))) + int(
+                zipcode.count(str(10012))))
+        elif message_body == '10004':
+            sum = int(zipcode.count(str(10006))) + int(zipcode.count(str(10005)))
+        elif message_body == '10005':
+            sum = int(zipcode.count(str(10004))) + int(
+                zipcode.count(str(10006)) + int(zipcode.count(str(10007))) + int(zipcode.count(str(10038))))
         resp.message(
             'Your requested zipcode has {} fire stations and {} '
-            'fire stations in neighboring postal codes'.format(
-                zipcode.count(message_body), sum))
+            'fire stations in neighboring postal codes. Over the last'
+            '1000 incidents, your zipcode, {}, has had {} occurences of '
+            'motor vehicle collisions'.format(
+                zipcode.count(message_body), sum, message_body, precinct_zip.count(message_body)))
 
 
     return str(resp)

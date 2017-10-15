@@ -1,7 +1,7 @@
 import requests
 from collections import Counter
-url = 'https://data.cityofnewyork.us/resource/qiz3-axqb.json'
-precinct_data = requests.get(url).json()
+url2 = 'https://data.cityofnewyork.us/resource/qiz3-axqb.json'
+precinct_data = requests.get(url2).json()
 
 message_body = input('yo ')
 precinct_zip = []
