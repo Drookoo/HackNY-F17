@@ -17,11 +17,10 @@ def sms():
 
     zipcode = []
     dreamset = {}
-    url = 'https://data.cityofnewyork.us/resource/byk8-bdfw.json'
+    url = 'http://webpage.pace.edu/ar88230p/meow.json'
     dataset = requests.get(url).json()
-    for e in range(47):
+    for e in range(213):
         zipcode.append(dataset[e]['postcode'])
-
 
     resp.message('There are {} fire stations in your zip'.format(zipcode.count(message_body)))
     return str(resp)
