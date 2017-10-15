@@ -37,6 +37,8 @@ def sms():
             sum = int(zipcode.count(str(10009))) + int(zipcode.count(str(10012)) + int(
                 zipcode.count(str(10013))) + int(zipcode.count(str(10003))) + int(
                 zipcode.count(str(10007))) + int(zipcode.count(str(10038))))
+        elif message_body == '10001':
+            sum = int(zipcode.count(str(10011)) + int(zipcode.count(str(10010)) + int(zipcode.count(str(10016)) + int(zipcode.count(str(10018))))))
         elif message_body == '10003':
             sum = int(zipcode.count(str(10002))) + int(zipcode.count(str(10009)) + int(
                 zipcode.count(str(10010))) + int(zipcode.count(str(100011))) + int(
@@ -46,13 +48,91 @@ def sms():
         elif message_body == '10005':
             sum = int(zipcode.count(str(10004))) + int(
                 zipcode.count(str(10006)) + int(zipcode.count(str(10007))) + int(zipcode.count(str(10038))))
+        elif message_body == '10006':
+            sum = int(zipcode.count(str(10007))) + int(zipcode.count(str(10005)) + int(zipcode.count(str(10004))) + int(
+                zipcode.count(str(10048))) + int(zipcode.count(str(100038))))
+        elif message_body == '10007':
+            sum = int(zipcode.count(str(10013))) + int(zipcode.count(str(10038)) + int(zipcode.count(str(10006))) + int(
+                zipcode.count(str(10048))))
+        elif message_body == '10009':
+            sum = int(zipcode.count(str(10010))) + int(zipcode.count(str(10003)) + int(zipcode.count(str(10002))))
+        elif message_body == '10010':
+            sum = int(zipcode.count(str(10016))) + int(zipcode.count(str(10001)) + int(zipcode.count(str(10011))) + int(
+                zipcode.count(str(10011))) + int(zipcode.count(str(10003)) + int(zipcode.count(str(10009)))))
+        elif message_body == '10012':
+            sum = int(zipcode.count(str(10011))) + int(zipcode.count(str(10003)) + int(zipcode.count(str(10002))) + int(
+                zipcode.count(str(10013) + zipcode.count(str(10014)))))
+        elif message_body == '10035':
+            sum = int(zipcode.count(str(10037))) + int(
+                zipcode.count(str(10027)) + int(zipcode.count(str(10026))) + int(zipcode.count(str(10029))))
+        elif message_body == '10037':
+            sum = int(zipcode.count(str(10035))) + int(zipcode.count(str(10027))) + int(zipcode.count(str(10030)))
+        elif message_body == '10030':
+            sum = int(zipcode.count(str(10039))) + int(zipcode.count(str(10037))) + int(zipcode.count(str(10027))) + int(zipcode.count(str(10031))) + int(
+                zipcode.count(str(10039)))
+        elif message_body == '10039':
+            sum = int(zipcode.count(str(10032))) + int(zipcode.count(str(10030)) + int(zipcode.count(str(10031))))
+        elif message_body == '10032':
+            sum = int(zipcode.count(str(10033))) + int(zipcode.count(str(10039))) + int(zipcode.count(str(10031)))
+        elif message_body == '10033':
+            sum = int(zipcode.count(str(10040))) + int(
+                zipcode.count(str(10032)))
+        elif message_body == '10040':
+            sum = int(zipcode.count(str(10034))) + int(
+                zipcode.count(str(10033)))
+        elif message_body == '10034':
+            sum = int(zipcode.count(str(10040)))
+        elif message_body == '10031':
+            sum = int(zipcode.count(str(10032))) + int(
+                zipcode.count(str(10039))) + int(zipcode.count(str(10030))) + int(zipcode.count(str(10027)))
+        elif message_body == '10027':
+            sum = int(zipcode.count(str(10031))) + int(zipcode.count(str(10030))) + int(zipcode.count(str(10037))) + int(zipcode.count(str(10035))) + int(zipcode.count(str(10026))) + int(zipcode.count(str(10025)))
+        elif message_body == '10026':
+            sum = int(zipcode.count(str(10027))) + int(
+                zipcode.count(str(10035))) + int(zipcode.count(str(10029))) + int(zipcode.count(str(10025)))
+        elif message_body == '10025':
+            sum = int(zipcode.count(str(10027))) + int(
+                zipcode.count(str(10026))) + int(zipcode.count(str(10024)))
+        elif message_body == '10024':
+            sum = int(zipcode.count(str(10025))) + int(
+                zipcode.count(str(10023)))
+        elif message_body == '10023':
+            sum = int(zipcode.count(str(10024))) + int(
+                zipcode.count(str(10019)))
+        elif message_body == '10019':
+            sum = int(zipcode.count(str(10023))) + int(
+                zipcode.count(str(10022))) + int(zipcode.count(str(10036)))
+        elif message_body == '10036':
+            sum = int(zipcode.count(str(10019))) + int(
+                zipcode.count(str(10017))) + int(zipcode.count(str(10018)))
+        elif message_body == '10018':
+            sum = int(zipcode.count(str(10036))) + int(
+                zipcode.count(str(10017))) + int(zipcode.count(str(10016))) + int(zipcode.count(str(10001)))
+        elif message_body == '10016':
+            sum = int(zipcode.count(str(10010))) + int(
+                zipcode.count(str(10001))) + int(zipcode.count(str(10018))) + int(zipcode.count(str(10017)))
+        elif message_body == '10029':
+            sum = int(zipcode.count(str(10128))) + int(
+                zipcode.count(str(10026))) + int(zipcode.count(str(10035)))
+        elif message_body == '10128':
+            sum = int(zipcode.count(str(10029))) + int(
+                zipcode.count(str(10028)))
+        elif message_body == '10021':
+            sum = int(zipcode.count(str(10028))) + int(
+                zipcode.count(str(10022)))
+        elif message_body == '10022':
+            sum = int(zipcode.count(str(10017))) + int(
+                zipcode.count(str(10019))) + int(zipcode.count(str(10021)))
+        elif message_body == '10017':
+            sum = int(zipcode.count(str(10016))) + int(
+                zipcode.count(str(10018))) + int(zipcode.count(str(10036))) + int(zipcode.count(str(10022)))
+
         resp.message(
             'Your requested zipcode has {} fire stations and {} '
-            'fire stations in neighboring postal codes. Over the last'
+            'fire stations in neighboring postal codes. Over the last '
             '1000 incidents, your zipcode, {}, has had {} occurences of '
             'motor vehicle collisions'.format(
                 zipcode.count(message_body), sum, message_body, precinct_zip.count(message_body)))
-
 
     return str(resp)
 
