@@ -16,13 +16,24 @@ def sms():
     resp = MessagingResponse()
 
     zipcode = []
-    dreamset = {}
+    address = []
+    boro = []
     url = 'http://webpage.pace.edu/ar88230p/meow.json'
     dataset = requests.get(url).json()
+
     for e in range(213):
         zipcode.append(dataset[e]['postcode'])
+        address.append(dataset[e]['facilityaddress'])
+        boro.append(dataset[e]['borough'])
 
-    resp.message('There are {} fire stations in your zip'.format(zipcode.count(message_body)))
+
+    if message_body not in zipcode:
+        resp.message("gtfo feg._.")
+    else:
+        resp.message(
+            'There are {} fire stations {} in your {} zip'.format(zipcode.count(message_body), address[0], boro[0]))
+
+
     return str(resp)
 
 if __name__ == "__main__":
